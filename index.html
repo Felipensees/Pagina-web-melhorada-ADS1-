@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forúm Temático</title>
+
+<style>
+/* Container da roleta */
+#roleta{
+    width: 400px;
+    height: 250px;
+    margin: auto; /* centraliza horizontalmente as imagens */
+    position: relative;
+}
+
+/* Todas as imagens começam escondidas */
+#roleta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preenche sem distorcer a imagem */
+    display: none;
+}
+
+/* Apenas a imagem ativa fica aparecendo */
+#roleta img.ativa{
+    display: block;
+}
+</style>
+
+</head>
+
+<body>
+
+<div style="text-align: center;">
+
+<h1>Dodô</h1>
+
+<!-- Roleta de imagens -->
+<div id="roleta">
+    <img class="ativa" src="https://i.metroimg.com/amlefjjxS9hpS2610nPQQShJC4bR7TGTs9wGHxiDzCU/w:900/q:85/f:webp/plain/https://images.metroimg.com/2022/03/23160006/passaro-dodo.jpg" alt="Dodô 1">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oxford_Dodo_display.jpg/1920px-Oxford_Dodo_display.jpg" alt="Dodô 2">
+    <img src="https://www.popsci.com/wp-content/uploads/2024/08/Dodo-Sculpture.jpg" alt="Dodô 3">
+</div>
+
+<!-- Texto  -->
+<p style="padding: 30px;">
+🦤 Dodô
+
+O dodô (Raphus cucullatus) foi uma ave não voadora que vivia exclusivamente na ilha de Maurício, no Oceano Índico. Media cerca de 1 metro de altura, pesava entre 10 e 18 kg, tinha corpo robusto, asas pequenas incapazes de voo, bico grande e curvado e penas acinzentadas com cauda curta.
+
+Sem predadores naturais, evoluiu sem a necessidade de voar e não tinha medo de humanos, o que o tornou vulnerável. Após a chegada dos europeus no século XVII, foi caçado, teve seu habitat destruído e seus ovos predados por animais introduzidos, como ratos e porcos. Por volta de 1681, já estava extinto.
+
+Hoje, o dodô é um dos maiores símbolos da extinção causada pelo ser humano e ficou popular na cultura.
+</p>
+
+<a target="_blank" href="https://pt.wikipedia.org/wiki/Dod%C3%B4">Link da wikipedia</a>
+<br>
+<span>Feito no dia 05 de março de 2026 como trabalho de Forúm temático<br>Felipe Ribeiro</span>
+
+</div>
+
+<!-- Script da roleta -->
+<script>
+let imagens = document.querySelectorAll("#roleta img");
+let index = 0;
+
+setInterval(() => {
+    imagens[index].classList.remove("ativa"); // esconde a imagem atual
+    index++;
+    if(index >= imagens.length){
+        index = 0; // volta para a primeira
+    }
+    imagens[index].classList.add("ativa"); // mostra a próxima
+}, 3000); // troca a cada 3 segundos
+</script>
+<style>/* Comentarios explicando as funções para seguir as boas práticas */
+
+</body>
+</html>
